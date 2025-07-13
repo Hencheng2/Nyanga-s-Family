@@ -13,15 +13,14 @@ document.addEventListener('DOMContentLoaded', function() {
             if (content.classList.contains('show')) {
                 content.classList.remove('show');
                 content.style.maxHeight = null; // Collapse
-                content.style.padding = '0 25px'; // Reset padding after collapse
+                content.style.padding = '0 30px'; // Reset padding after collapse
             } else {
                 content.classList.add('show');
                 // Set max-height to scrollHeight to allow smooth transition
                 // A large fixed value can also work if content height is very variable
                 content.style.maxHeight = content.scrollHeight + "px";
-                content.style.padding = '15px 25px'; // Apply padding when showing
+                content.style.padding = '20px 30px'; // Apply padding when showing
             }
         });
     });
 });
-                          
