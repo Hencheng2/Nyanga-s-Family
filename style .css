@@ -1,28 +1,28 @@
+/* Import Google Font - Poppins */
+/* This line must be at the very top of your CSS file for the font to load correctly */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
 /* General Body and Font Settings */
 body {
-    font-family: 'Poppins', sans-serif; /* A more modern and versatile font */
+    font-family: 'Poppins', sans-serif; /* A modern and versatile font */
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #eaf2f8; /* Very light blue */
+    background-color: #eaf2f8; /* Very light blue background */
     color: #333;
-    -webkit-font-smoothing: antialiased; /* Smoother font rendering */
-    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased; /* Smoother font rendering for webkit browsers */
+    -moz-osx-font-smoothing: grayscale; /* Smoother font rendering for Firefox */
 }
-
-/* Import Google Font (add this at the very top of your style.css file) */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-
 
 /* Header Styles */
 header {
-    background: linear-gradient(135deg, #2c3e50, #1a2b3c); /* Diagonal gradient */
+    background: linear-gradient(135deg, #2c3e50, #1a2b3c); /* Diagonal gradient for header */
     color: #ecf0f1;
     padding: 2.5rem 0; /* More vertical padding */
     text-align: center;
     box-shadow: 0 6px 12px rgba(0,0,0,0.3); /* Stronger, softer shadow */
     margin-bottom: 40px;
-    position: relative; /* For potential future embellishments */
+    position: relative;
     overflow: hidden; /* Ensures no overflow from header background effects */
 }
 
@@ -31,7 +31,7 @@ header h1 {
     font-size: 3.5em; /* Larger, bolder title */
     letter-spacing: 3px; /* Increased letter spacing */
     text-transform: uppercase;
-    font-weight: 700; /* Poppins bold */
+    font-weight: 700; /* Poppins bold weight */
     text-shadow: 2px 2px 4px rgba(0,0,0,0.2); /* Subtle text shadow */
 }
 
@@ -59,7 +59,7 @@ header p {
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     border: 1px solid #dcdcdc;
     overflow: hidden; /* Clip anything outside rounded corners */
-    position: relative; /* For potential overlay effects */
+    position: relative;
 }
 
 .family-card:hover {
