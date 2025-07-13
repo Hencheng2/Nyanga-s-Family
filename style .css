@@ -1,128 +1,112 @@
+/* General Body and Font Settings */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif; /* A more modern and versatile font */
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #eaf2f8; /* A very light, calming blue */
+    background-color: #eaf2f8; /* Very light blue */
     color: #333;
+    -webkit-font-smoothing: antialiased; /* Smoother font rendering */
+    -moz-osx-font-smoothing: grayscale;
 }
 
+/* Import Google Font (add this at the very top of your style.css file) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+
+/* Header Styles */
 header {
-    background: linear-gradient(to right, #2c3e50, #1a2b3c);
+    background: linear-gradient(135deg, #2c3e50, #1a2b3c); /* Diagonal gradient */
     color: #ecf0f1;
-    padding: 1.8rem 0;
+    padding: 2.5rem 0; /* More vertical padding */
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
-    margin-bottom: 30px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3); /* Stronger, softer shadow */
+    margin-bottom: 40px;
+    position: relative; /* For potential future embellishments */
+    overflow: hidden; /* Ensures no overflow from header background effects */
 }
 
 header h1 {
     margin: 0;
-    font-size: 3em;
-    letter-spacing: 2px;
+    font-size: 3.5em; /* Larger, bolder title */
+    letter-spacing: 3px; /* Increased letter spacing */
     text-transform: uppercase;
+    font-weight: 700; /* Poppins bold */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2); /* Subtle text shadow */
 }
 
 header p {
-    font-size: 1.2em;
-    opacity: 0.95;
-    margin-top: 10px;
+    font-size: 1.3em; /* Larger tagline */
+    opacity: 0.98;
+    margin-top: 15px;
+    font-weight: 300; /* Lighter weight for tagline */
 }
 
-/* Styles for the Grandfather's Homepage */
-.grandfather-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: calc(100vh - 200px); /* Adjust based on header/footer height */
-    padding: 30px;
+/* Main Content Area Styling */
+.grandfather-page, .children-page-main {
+    max-width: 1000px; /* Slightly wider content area for better layout */
+    margin: 30px auto 60px auto; /* More margin at the bottom */
+    padding: 0 20px;
 }
 
-.grandfather-page .family-card {
-    max-width: 600px; /* Limit width for the main card */
-    padding: 40px; /* More padding */
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15); /* More prominent shadow */
-    border: 2px solid #4a90e2; /* Stronger border */
-}
-
-.grandfather-page .family-card img {
-    width: 200px; /* Larger image for the homepage */
-    height: 200px;
-    border-width: 6px; /* Thicker border */
-}
-
-.view-children-button-container {
-    margin-top: 30px;
-}
-
-.view-children-button {
-    display: inline-block;
-    background-color: #3498db;
-    color: white;
-    padding: 15px 30px;
-    font-size: 1.1em;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    font-weight: bold;
-}
-
-.view-children-button:hover {
-    background-color: #2980b9;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
-}
-
-
-/* General Family Card Styles (used on both pages where applicable) */
+/* Family Card Styling (applies to individual people cards) */
 .family-card {
     background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-    padding: 25px;
+    border-radius: 15px; /* More rounded corners */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* More pronounced, softer shadow */
+    padding: 30px; /* More internal padding */
     text-align: center;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     border: 1px solid #dcdcdc;
+    overflow: hidden; /* Clip anything outside rounded corners */
+    position: relative; /* For potential overlay effects */
 }
 
 .family-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+    transform: translateY(-12px); /* More pronounced lift */
+    box-shadow: 0 18px 40px rgba(0,0,0,0.25); /* Stronger hover shadow */
 }
 
 .family-card img {
-    width: 160px;
-    height: 160px;
+    width: 180px; /* Larger image size */
+    height: 180px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 20px;
-    border: 5px solid #4a90e2;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    margin-bottom: 25px;
+    border: 6px solid #4a90e2; /* Thicker, vibrant blue border */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2); /* Improved image shadow */
+    transition: transform 0.3s ease; /* Smooth scale on hover */
+}
+
+.family-card:hover img {
+    transform: scale(1.05); /* Slightly enlarge image on card hover */
 }
 
 .family-card h2 {
-    color: #2e86de;
-    font-size: 2em;
+    color: #2e86de; /* Bright blue for names */
+    font-size: 2.5em; /* Larger, bolder name font */
     margin-top: 10px;
-    margin-bottom: 8px;
-    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+    letter-spacing: 0.8px;
+    font-weight: 600; /* Poppins semi-bold */
 }
 
 .family-card p {
-    font-size: 1.05em;
-    margin-bottom: 6px;
+    font-size: 1.1em;
+    margin-bottom: 8px;
     color: #555;
+    line-height: 1.5;
 }
 
-.family-card h4 { /* Changed from h3 for children's sub-heading */
+.family-card h4 { /* Sub-heading for children list */
     color: #34495e;
-    font-size: 1.1em;
-    margin-top: 15px;
-    margin-bottom: 8px;
-    border-bottom: 1px solid #aab7c4;
-    padding-bottom: 5px;
+    font-size: 1.3em;
+    margin-top: 25px;
+    margin-bottom: 12px;
+    border-bottom: 2px solid #aab7c4; /* Stronger, more defined border */
+    padding-bottom: 8px;
     display: inline-block;
+    font-weight: 600;
 }
 
 .family-card ul {
@@ -133,262 +117,321 @@ header p {
 
 .family-card ul li {
     background-color: #f7f9fb;
-    margin-bottom: 7px;
-    padding: 10px 15px;
-    border-radius: 8px;
+    margin-bottom: 8px; /* More space between children items */
+    padding: 12px 20px; /* More padding */
+    border-radius: 10px; /* More rounded corners */
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    font-size: 1em;
+    font-size: 1.05em;
     color: #444;
-    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.08); /* More noticeable inner shadow */
+    transition: background-color 0.2s ease;
+}
+
+.family-card ul li:hover {
+    background-color: #eef4f8; /* Light hover background for list items */
 }
 
 .family-card ul li img {
-    width: 35px;
-    height: 35px;
+    width: 40px; /* Larger child images */
+    height: 40px;
     border-radius: 50%;
     object-fit: cover;
-    margin-right: 12px;
+    margin-right: 15px;
     border: 2px solid #85c1e9;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 5px rgba(0,0,0,0.15);
 }
 
-/* Styles for the Children's Page */
-.children-page-main {
-    max-width: 900px; /* Slightly wider content area for accordion */
-    margin: 30px auto 50px auto;
-    padding: 0 20px;
+/* Button Styling (General) */
+.view-children-button-container, .gallery-buttons {
+    text-align: center;
+    margin-top: 40px;
 }
 
-.back-to-home {
+.view-children-button,
+.gallery-buttons button {
     display: inline-block;
-    margin-bottom: 25px;
+    background: linear-gradient(45deg, #3498db, #2980b9); /* Gradient for buttons */
+    color: white;
+    padding: 18px 40px; /* Generous padding */
+    font-size: 1.25em; /* Larger font size */
+    border: none;
+    border-radius: 10px; /* Rounded button corners */
+    text-decoration: none; /* Remove underline for links */
+    cursor: pointer;
+    margin: 0 25px; /* More space between buttons */
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25); /* Stronger button shadow */
+    font-weight: 700; /* Bolder button text */
+    letter-spacing: 0.8px;
+    text-transform: uppercase; /* Uppercase text */
+    position: relative; /* For pseudo-elements */
+    overflow: hidden; /* For hover effect */
+}
+
+.view-children-button:hover,
+.gallery-buttons button:hover {
+    background: linear-gradient(45deg, #2980b9, #3498db); /* Reverse gradient on hover */
+    transform: translateY(-7px); /* More pronounced lift */
+    box-shadow: 0 12px 25px rgba(0,0,0,0.35); /* Even stronger shadow on hover */
+}
+
+/* Ripple effect on button click (JavaScript would be needed for a true ripple) */
+.view-children-button:active,
+.gallery-buttons button:active {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* Pseudo-element for a subtle shine effect on hover */
+.view-children-button::before,
+.gallery-buttons button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2); /* White translucent shine */
+    transform: skewX(-30deg);
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1); /* Smooth transition */
+}
+
+.view-children-button:hover::before,
+.gallery-buttons button:hover::before {
+    left: 100%; /* Move shine across button */
+}
+
+/* Back to Home Button */
+.back-to-home {
+    display: inline-flex; /* Use flex to align icon and text */
+    align-items: center;
+    margin-bottom: 30px;
     color: #3498db;
     text-decoration: none;
-    font-weight: bold;
-    font-size: 1.1em;
-    transition: color 0.3s ease;
+    font-weight: 600;
+    font-size: 1.15em;
+    transition: color 0.3s ease, transform 0.2s ease;
+    padding: 5px 10px; /* Add some padding for clickable area */
+    border-radius: 5px;
 }
 
 .back-to-home:hover {
     color: #2980b9;
+    transform: translateX(-5px); /* Slide effect on hover */
+    background-color: rgba(52, 152, 219, 0.05); /* Very subtle background on hover */
 }
 
-/* Accordion Styles */
+/* Accordion Styles (for children.html) */
 .accordion-container {
     background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-    overflow: hidden; /* Important for border-radius on items */
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15); /* Stronger shadow for the entire accordion */
+    overflow: hidden;
 }
 
 .accordion-item {
-    border-bottom: 1px solid #e0e0e0; /* Separator between items */
+    border-bottom: 1px solid #e0e0e0;
 }
 
 .accordion-item:last-child {
-    border-bottom: none; /* No border for the last item */
+    border-bottom: none;
 }
 
 .accordion-header {
-    background-color: #f9f9f9; /* Lighter background for clickable header */
+    background-color: #f9f9f9;
     display: flex;
     align-items: center;
     width: 100%;
-    padding: 15px 25px;
+    padding: 18px 30px; /* More padding */
     border: none;
     text-align: left;
     cursor: pointer;
-    font-size: 1.2em;
-    font-weight: bold;
+    font-size: 1.3em; /* Larger font */
+    font-weight: 600; /* Bolder text */
     color: #34495e;
-    transition: background-color 0.3s ease;
-    border-radius: 12px; /* Apply to header */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    position: relative;
+    z-index: 1; /* Ensure header is above content's potential effects */
 }
 
 .accordion-header:hover {
-    background-color: #edf2f6; /* Subtle hover effect */
+    background-color: #eaf0f4; /* More noticeable hover background */
+    color: #2c3e50;
 }
 
 .accordion-header img {
-    width: 60px; /* Slightly larger image for accordion headers */
-    height: 60px;
+    width: 70px; /* Larger image for accordion headers */
+    height: 70px;
     border-radius: 50%;
     object-fit: cover;
-    margin-right: 15px;
-    border: 3px solid #85c1e9;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-right: 20px;
+    border: 4px solid #85c1e9; /* Slightly thicker border */
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+.accordion-header:hover img {
+    transform: scale(1.05); /* Slight image scale on header hover */
 }
 
 .accordion-header span {
-    flex-grow: 1; /* Allows name to take up available space */
+    flex-grow: 1;
 }
 
 /* Arrow indicator for accordion */
 .accordion-header::after {
-    content: '\25BC'; /* Down arrow unicode character */
-    font-size: 0.8em;
-    color: #666;
+    content: '\25BC'; /* Down arrow */
+    font-size: 0.9em;
+    color: #777;
     margin-left: auto;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .accordion-header.active::after {
     transform: rotate(180deg); /* Rotate arrow when active */
+    color: #2e86de; /* Blue arrow when active */
 }
 
 .accordion-content {
-    padding: 0 25px;
+    padding: 0 30px;
     background-color: #ffffff;
-    max-height: 0; /* Hidden by default */
+    max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease-out, padding 0.4s ease-out; /* Smooth slide effect */
-    border-top: 1px solid #e0e0e0;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+    border-top: 1px solid #e0e0e0; /* Separator for content */
 }
 
 .accordion-content.show {
-    max-height: 500px; /* Adjust based on expected content height */
-    padding: 15px 25px; /* Apply padding when visible */
+    max-height: 600px; /* Increased max-height for content */
+    padding: 20px 30px; /* Apply padding when visible */
 }
 
 .accordion-content p {
-    margin-bottom: 5px;
-    font-size: 0.95em;
+    margin-bottom: 8px;
+    font-size: 1em;
     color: #444;
 }
 
 .accordion-content h4 {
-    margin-top: 15px;
-    margin-bottom: 8px;
+    margin-top: 20px;
+    margin-bottom: 10px;
     color: #2c3e50;
-    font-size: 1em;
+    font-size: 1.1em;
     border-bottom: 1px solid #f0f0f0;
     padding-bottom: 5px;
     display: inline-block;
-}
-
-.accordion-content ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    font-weight: 600;
 }
 
 .accordion-content ul li {
-    display: flex;
-    align-items: center;
-    background-color: #f7f9fb;
-    margin-bottom: 5px;
-    padding: 8px 12px;
-    border-radius: 6px;
-    font-size: 0.9em;
+    background-color: #eff5fa; /* Slightly darker background for children in accordion */
+    margin-bottom: 6px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 0.95em;
     color: #555;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
 }
 
 .accordion-content ul li img {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 10px;
-    border: 1px solid #cceeff;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #aaddff;
 }
 
 
-/* Gallery Buttons (Footer section) */
-.gallery-buttons {
-    text-align: center;
-    padding: 40px;
-    margin-top: 30px;
-    background-color: #f0f8ff;
-    box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
-}
-
-.gallery-buttons button {
-    background-color: #3498db;
-    color: white;
-    border: none;
-    padding: 18px 35px;
-    font-size: 1.2em;
-    border-radius: 10px;
-    cursor: pointer;
-    margin: 0 20px;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    font-weight: bold;
-    letter-spacing: 0.5px;
-}
-
-.gallery-buttons button:hover {
-    background-color: #2980b9;
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-}
-
+/* Footer Styling */
 footer {
     background-color: #2c3e50;
     color: #ecf0f1;
     text-align: center;
-    padding: 1.8rem 0;
-    margin-top: 60px;
-    font-size: 1em;
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    padding: 2rem 0; /* More padding */
+    margin-top: 80px; /* More space above footer */
+    font-size: 1.05em;
+    box-shadow: 0 -3px 8px rgba(0,0,0,0.15); /* Stronger top shadow */
 }
 
-/* Responsive adjustments */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 2.2em;
+    header {
+        padding: 1.5rem 0;
     }
-
+    header h1 {
+        font-size: 2.5em;
+        letter-spacing: 2px;
+    }
     header p {
-        font-size: 1em;
+        font-size: 1.1em;
     }
 
     .grandfather-page .family-card {
         padding: 25px;
+        margin: 20px auto;
     }
-
     .grandfather-page .family-card img {
         width: 150px;
         height: 150px;
     }
-
-    .view-children-button {
+    .family-card h2 {
+        font-size: 2em;
+    }
+    .family-card p {
         font-size: 1em;
-        padding: 12px 25px;
     }
 
-    .children-page-main {
-        padding: 0 15px;
-    }
-
-    .accordion-header {
-        font-size: 1em;
-        padding: 12px 15px;
-    }
-
-    .accordion-header img {
-        width: 50px;
-        height: 50px;
-    }
-
-    .accordion-content {
-        padding: 10px 15px;
-    }
-
-    .gallery-buttons {
-        padding: 30px 15px;
-    }
-
+    .view-children-button,
     .gallery-buttons button {
+        padding: 15px 30px;
+        font-size: 1.1em;
         margin: 10px 0;
         display: block;
-        width: 90%;
+        width: 85%;
         max-width: 300px;
         margin-left: auto;
         margin-right: auto;
-        padding: 15px 25px;
-        font-size: 1.05em;
+    }
+
+    .back-to-home {
+        font-size: 1em;
+        margin-bottom: 20px;
+    }
+
+    .accordion-header {
+        font-size: 1.1em;
+        padding: 15px 20px;
+    }
+    .accordion-header img {
+        width: 50px;
+        height: 50px;
+        margin-right: 15px;
+    }
+    .accordion-content {
+        padding: 15px 20px;
+    }
+    .accordion-content p {
+        font-size: 0.9em;
+    }
+    .accordion-content ul li {
+        font-size: 0.85em;
+        padding: 8px 10px;
+    }
+    .accordion-content ul li img {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8em;
+        letter-spacing: 1px;
+    }
+    header p {
+        font-size: 0.9em;
+    }
+    .family-card h2 {
+        font-size: 1.6em;
     }
     }
