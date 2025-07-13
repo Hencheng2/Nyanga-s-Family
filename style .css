@@ -3,71 +3,107 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    /* Light background with a subtle blue tint */
     background-color: #eaf2f8; /* A very light, calming blue */
     color: #333;
 }
 
 header {
-    /* Deep blue with a soft gradient for the header */
-    background: linear-gradient to right, #2c3e50, #1a2b3c;
+    background: linear-gradient(to right, #2c3e50, #1a2b3c);
     color: #ecf0f1;
-    padding: 1.8rem 0; /* Slightly more padding */
+    padding: 1.8rem 0;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.25); /* Stronger shadow */
-    margin-bottom: 30px; /* Space below header */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+    margin-bottom: 30px;
 }
 
 header h1 {
     margin: 0;
-    font-size: 3em; /* Slightly larger title */
+    font-size: 3em;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
 
 header p {
-    font-size: 1.2em; /* Slightly larger tagline */
+    font-size: 1.2em;
     opacity: 0.95;
     margin-top: 10px;
 }
 
-.family-members-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px; /* Increased gap between cards */
+/* Styles for the Grandfather's Homepage */
+.grandfather-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 200px); /* Adjust based on header/footer height */
     padding: 30px;
-    max-width: 1200px;
-    margin: 30px auto 50px auto; /* More margin at the bottom */
 }
 
+.grandfather-page .family-card {
+    max-width: 600px; /* Limit width for the main card */
+    padding: 40px; /* More padding */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15); /* More prominent shadow */
+    border: 2px solid #4a90e2; /* Stronger border */
+}
+
+.grandfather-page .family-card img {
+    width: 200px; /* Larger image for the homepage */
+    height: 200px;
+    border-width: 6px; /* Thicker border */
+}
+
+.view-children-button-container {
+    margin-top: 30px;
+}
+
+.view-children-button {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.1em;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    font-weight: bold;
+}
+
+.view-children-button:hover {
+    background-color: #2980b9;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+
+/* General Family Card Styles (used on both pages where applicable) */
 .family-card {
     background-color: #ffffff;
-    border-radius: 12px; /* Slightly more rounded corners */
-    box-shadow: 0 6px 20px rgba(0,0,0,0.1); /* Enhanced shadow */
-    padding: 25px; /* Slightly more padding inside cards */
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    padding: 25px;
     text-align: center;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    border: 1px solid #dcdcdc; /* Subtle border */
+    border: 1px solid #dcdcdc;
 }
 
 .family-card:hover {
-    transform: translateY(-10px); /* More pronounced lift on hover */
-    box-shadow: 0 12px 30px rgba(0,0,0,0.2); /* More pronounced shadow on hover */
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
 }
 
 .family-card img {
-    width: 160px; /* Slightly larger images */
+    width: 160px;
     height: 160px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 20px;
-    border: 5px solid #4a90e2; /* A more vibrant blue border */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Improved image shadow */
+    border: 5px solid #4a90e2;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 .family-card h2 {
-    color: #2e86de; /* A brighter blue for names */
-    font-size: 2em; /* Larger name font */
+    color: #2e86de;
+    font-size: 2em;
     margin-top: 10px;
     margin-bottom: 8px;
     letter-spacing: 0.5px;
@@ -79,13 +115,13 @@ header p {
     color: #555;
 }
 
-.family-card h3 {
-    color: #34495e; /* Darker tone for "Children" heading */
-    font-size: 1.3em;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    border-bottom: 2px solid #aab7c4; /* Stronger and more defined border */
-    padding-bottom: 8px;
+.family-card h4 { /* Changed from h3 for children's sub-heading */
+    color: #34495e;
+    font-size: 1.1em;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #aab7c4;
+    padding-bottom: 5px;
     display: inline-block;
 }
 
@@ -96,75 +132,211 @@ header p {
 }
 
 .family-card ul li {
-    background-color: #f7f9fb; /* Lighter background for list items */
-    margin-bottom: 7px; /* More space between children */
-    padding: 10px 15px; /* More padding */
-    border-radius: 8px; /* More rounded corners */
+    background-color: #f7f9fb;
+    margin-bottom: 7px;
+    padding: 10px 15px;
+    border-radius: 8px;
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Align left */
+    justify-content: flex-start;
     font-size: 1em;
     color: #444;
-    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05); /* Subtle inner shadow */
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
 }
 
 .family-card ul li img {
-    width: 35px; /* Slightly larger child images */
+    width: 35px;
     height: 35px;
     border-radius: 50%;
     object-fit: cover;
     margin-right: 12px;
-    border: 2px solid #85c1e9; /* Light blue border for child images */
+    border: 2px solid #85c1e9;
     box-shadow: 0 1px 4px rgba(0,0,0,0.1);
 }
 
+/* Styles for the Children's Page */
+.children-page-main {
+    max-width: 900px; /* Slightly wider content area for accordion */
+    margin: 30px auto 50px auto;
+    padding: 0 20px;
+}
+
+.back-to-home {
+    display: inline-block;
+    margin-bottom: 25px;
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.back-to-home:hover {
+    color: #2980b9;
+}
+
+/* Accordion Styles */
+.accordion-container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    overflow: hidden; /* Important for border-radius on items */
+}
+
+.accordion-item {
+    border-bottom: 1px solid #e0e0e0; /* Separator between items */
+}
+
+.accordion-item:last-child {
+    border-bottom: none; /* No border for the last item */
+}
+
+.accordion-header {
+    background-color: #f9f9f9; /* Lighter background for clickable header */
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 15px 25px;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #34495e;
+    transition: background-color 0.3s ease;
+    border-radius: 12px; /* Apply to header */
+}
+
+.accordion-header:hover {
+    background-color: #edf2f6; /* Subtle hover effect */
+}
+
+.accordion-header img {
+    width: 60px; /* Slightly larger image for accordion headers */
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    border: 3px solid #85c1e9;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.accordion-header span {
+    flex-grow: 1; /* Allows name to take up available space */
+}
+
+/* Arrow indicator for accordion */
+.accordion-header::after {
+    content: '\25BC'; /* Down arrow unicode character */
+    font-size: 0.8em;
+    color: #666;
+    margin-left: auto;
+    transition: transform 0.3s ease;
+}
+
+.accordion-header.active::after {
+    transform: rotate(180deg); /* Rotate arrow when active */
+}
+
+.accordion-content {
+    padding: 0 25px;
+    background-color: #ffffff;
+    max-height: 0; /* Hidden by default */
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out; /* Smooth slide effect */
+    border-top: 1px solid #e0e0e0;
+}
+
+.accordion-content.show {
+    max-height: 500px; /* Adjust based on expected content height */
+    padding: 15px 25px; /* Apply padding when visible */
+}
+
+.accordion-content p {
+    margin-bottom: 5px;
+    font-size: 0.95em;
+    color: #444;
+}
+
+.accordion-content h4 {
+    margin-top: 15px;
+    margin-bottom: 8px;
+    color: #2c3e50;
+    font-size: 1em;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.accordion-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.accordion-content ul li {
+    display: flex;
+    align-items: center;
+    background-color: #f7f9fb;
+    margin-bottom: 5px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.accordion-content ul li img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+    border: 1px solid #cceeff;
+}
+
+
+/* Gallery Buttons (Footer section) */
 .gallery-buttons {
     text-align: center;
-    padding: 40px; /* More padding around buttons */
+    padding: 40px;
     margin-top: 30px;
-    background-color: #f0f8ff; /* Light blue background for the button section */
-    box-shadow: 0 -2px 10px rgba(0,0,0,0.05); /* Shadow above section */
+    background-color: #f0f8ff;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
 }
 
 .gallery-buttons button {
-    background-color: #3498db; /* Original blue */
+    background-color: #3498db;
     color: white;
     border: none;
-    padding: 18px 35px; /* Larger buttons */
-    font-size: 1.2em; /* Larger font on buttons */
-    border-radius: 10px; /* More rounded buttons */
+    padding: 18px 35px;
+    font-size: 1.2em;
+    border-radius: 10px;
     cursor: pointer;
-    margin: 0 20px; /* More space between buttons */
+    margin: 0 20px;
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Stronger button shadow */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     font-weight: bold;
     letter-spacing: 0.5px;
 }
 
 .gallery-buttons button:hover {
-    background-color: #2980b9; /* Darker blue on hover */
-    transform: translateY(-5px); /* More lift on hover */
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3); /* Stronger shadow on hover */
+    background-color: #2980b9;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
 footer {
     background-color: #2c3e50;
     color: #ecf0f1;
     text-align: center;
-    padding: 1.8rem 0; /* More padding */
-    margin-top: 60px; /* More space above footer */
+    padding: 1.8rem 0;
+    margin-top: 60px;
     font-size: 1em;
     box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .family-members-grid {
-        padding: 20px;
-        grid-template-columns: 1fr;
-        gap: 25px; /* Slightly reduced gap for smaller screens */
-    }
-
     header h1 {
         font-size: 2.2em;
     }
@@ -173,17 +345,36 @@ footer {
         font-size: 1em;
     }
 
-    .family-card img {
-        width: 120px;
-        height: 120px;
+    .grandfather-page .family-card {
+        padding: 25px;
     }
 
-    .family-card h2 {
-        font-size: 1.6em;
+    .grandfather-page .family-card img {
+        width: 150px;
+        height: 150px;
     }
 
-    .family-card ul li {
-        justify-content: center; /* Center children list items on small screens */
+    .view-children-button {
+        font-size: 1em;
+        padding: 12px 25px;
+    }
+
+    .children-page-main {
+        padding: 0 15px;
+    }
+
+    .accordion-header {
+        font-size: 1em;
+        padding: 12px 15px;
+    }
+
+    .accordion-header img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .accordion-content {
+        padding: 10px 15px;
     }
 
     .gallery-buttons {
@@ -201,4 +392,3 @@ footer {
         font-size: 1.05em;
     }
     }
-    
