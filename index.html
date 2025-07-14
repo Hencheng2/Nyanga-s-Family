@@ -3,37 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nyanga Family Tree - Grandfather</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Nyanga Family Tree - Generations Connected</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>The Nyanga Family Tree</h1>
-        <p>Connecting generations, preserving memories.</p>
+    <header class="main-header">
+        <div class="header-content">
+            <h1>The Nyanga Family Tree</h1>
+            <p>Tracing Roots, Celebrating Legacies</p>
+        </div>
     </header>
 
-    <main class="grandfather-page-content">
-        <section class="family-card">
-            <img src="images/raphael.jpg" alt="Raphael Ochieng Nyanga">
-            <h2>Raphael Ochieng Nyanga (Guks)</h2>
-            <p><strong>Association:</strong> Grandfather</p>
-            <p><strong>Whereabouts:</strong> Siaya Ugenya</p>
-            <p><strong>Contact:</strong> N/A</p>
-
-            <div class="button-container">
-                <a href="children.html" class="action-button">View Children & Their Families</a>
+    <main class="page-container">
+        <section class="person-card primary-card">
+            <div class="card-image-wrapper">
+                <img src="images/raphael.jpg" alt="Raphael Ochieng Nyanga" class="person-image">
+            </div>
+            <div class="card-info">
+                <h2>Raphael Ochieng Nyanga (Guks)</h2>
+                <p class="role">Grandfather & Patriarch</p>
+                <div class="details">
+                    <p><strong>Whereabouts:</strong> Siaya Ugenya</p>
+                    <p><strong>Contact:</strong> N/A</p>
+                </div>
+                <div class="card-actions">
+                    <a href="children.html" class="primary-button">View Children & Their Families</a>
+                </div>
             </div>
         </section>
     </main>
 
-    <div class="cta-buttons">
-        <button class="action-button secondary-button" onclick="alert('Video Moments feature coming soon!')">Video Moments</button>
-        <button class="action-button secondary-button" onclick="alert('Photo Gallery feature coming soon!')">Photo Gallery</button>
-    </div>
+    <section class="utility-buttons">
+        <button class="secondary-button" onclick="alert('Video Moments feature coming soon!')">Video Moments</button>
+        <button class="secondary-button" onclick="alert('Photo Gallery feature coming soon!')">Photo Gallery</button>
+    </section>
 
-    <footer>
-        <p>&copy; 2025 Nyanga Family. All rights reserved.</p>
+    <footer class="main-footer">
+        <p>&copy; 2025 Nyanga Family. All rights reserved. Made with ❤️ in Juja, Kenya.</p>
     </footer>
 </body>
 </html>
